@@ -1,106 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Post-it</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <style>
-.topBar{
-  z-index:1;
-  position:absolute;
-  width:200px;
-  height:40px;
-  background-color:#f39c12;
-}
-.form{
-  margin-top:40px;
-  position:absolute;
-  width:200px;
-  height:160px;
-  background-color:#f1c40f;
-}
-.textAria{
-  position:absolute;
-  border-color:red;
-  width:180px;
-  height:140px;
-  position:absolute;
-  margin:10px;
-  font-family: 'Lato', sans-serif;
-  overflow:hide;
-}
-.textAria:focus{
-  outline: 0;
-}
-    </style>
-  </head>
 
-  <body>
-    <!-- bar-->
-      <nav class="navbar navbar-light bg-light justify-content-between">
-          <a class="navbar-brand"></a>
-          <form class="form-inline">
-              <a class="button is-black">Home</a>
-              <a class="button is-danger">Login</a>
-           
-          </form>
-        </nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Post-it</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <script type="text/javascript" src="monment.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <style>
+    .topBar {
+      z-index: 1;
+      position: absolute;
+      width: 200px;
+      height: 40px;
+      background-color: #f39c12;
+    }
 
-        <div class="image">
-            <img src="banner.png"> 
-            <h2 class="title"><span style= "font-size:60px" >My Post-it<br /></span></h2>
-            <h2 class="title"><span><br/><br />This site helps you<strong> remember more.</strong>!</span></h2>
-        </div>
-<br><center>
+    .form {
+      margin-top: 40px;
+      position: absolute;
+      width: 200px;
+      height: 160px;
+      background-color: #f1c40f;
+    }
 
-        <div class="field" >
-            <div class="control">
-              <textarea style="font-size:25px" class="textarea is-warning" type="text" rows="6" placeholder="Warning textarea"></textarea>
-            </div>
-          </div>
-       
+    .textAria {
+      position: absolute;
+      border-color: red;
+      width: 180px;
+      height: 140px;
+      position: absolute;
+      margin: 10px;
+      font-family: 'Lato', sans-serif;
+      overflow: hide;
+    }
 
-    <a class="button is-warning">Create</a>
-    <a class="button is-info">Clear</a>
-  </center>
+    .textAria:focus {
+      outline: 0;
+    }
+  </style>
+</head>
+<body>
 
-  <br>    
-  
-  <div class="row" style="margin: 20px">
-    <div id="postIt">
-      <div class=topBar></div>
-      <div class=form>
-        <div contenteditable class=textAria>
-          <span>Hello, <b>Edit Me First</b> Then Drag & Drop me.</span>
-        </div>
-      </div>
-    </div>
-    <br><br><br><br><br><br><br><br><p></p>
-  </div>
-<div class="row" style="margin: 20px">
-  <p class="control">
-        <a class="button is-danger">
-          Edit
-        </a>
-      </p>
-    <a class="button is-success">
-      <span class="icon is-small">
-        <i class="fa fa-check"></i>
+  <!-- bar-->
+  <!-- <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand"></a>
+    <form class="form-inline">
+      <a class="button is-info">Home</a>
+      <a class="button is-danger">Login</a>
+    </form>
+  </nav> -->
+  <div class="image">
+    <img src="banner.png">
+    <h2 class="title">
+      <span style="font-size:60px">My Post-it
+        <br />
       </span>
-      <span>Save</span>
-    </a>
-      <a class="button is-danger is-outlined">
-          <span>Delete</span>
-          <span class="icon is-small">
-            <i class="fa fa-times"></i>
-          </span>
-        </a>
-    </div>
-    <script src="js/index.js"></script>
-  </body>
+    </h2>
+    <h2 class="title">
+      <span>
+        <br/>
+        <br />This site helps you
+        <strong> remember more.</strong>!</span>
+    </h2>
+  </div>
+  <br>
+  <center>
+    <div class="field">
+      <div class="control">
+        <form methos="post">
+          Message : <textarea id="userInput" style="font-size:25px" class="textarea is-warning" type="text" rows="6" placeholder="Warning textarea"></textarea>
+          <br>
+          Actor: <input type="text" id="actor">
+          <br><br>
+          Date: <input type="text" id="date" readonly style="width: 280px">
+          <br><br>
+            <input type="button" id="create" name="button" class="button is-warning" value="Create">
+          <input class="button is-info" type="reset" value="Clear">
+        </form>
+  </center>
+  </div>
+  </div>
+  <br>
+  <span id="result"></span>
+  <script src="index.js"></script>
+</body>
+
 </html>

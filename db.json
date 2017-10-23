@@ -1,0 +1,22 @@
+{
+  "postIT": [
+    {
+      "id": 1,
+      "userInput": "madee",
+      "actor": "Mr. Milk",
+      "date": "16/10/2560"
+    },
+    {
+      "userInput": "",
+      "actor": "",
+      "date": "Monday, October 23, 2017 11:21 PM",
+      "id": 2
+    },
+    {
+      "userInput": "",
+      "actor": "",
+      "date": "Monday, October 23, 2017 11:25 PM",
+      "id": 3
+    }
+  ]
+}
