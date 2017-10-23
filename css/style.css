@@ -1,0 +1,31 @@
+nav{
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  
+  
+ 
+}
+
+.image { 
+  position: relative; 
+  width: 100%; /* for IE 6 */
+}
+
+h2 { 
+  position: absolute; 
+  top: 200px; 
+  left: 0; 
+  width: 100%; 
+}
+
+h2 span { 
+  color: black; 
+  letter-spacing: -1px;  
+  background: white(0, 0, 0, 0.7);
+  padding: 10px; 
+}
+.field{
+  width: 30%; 
+}
