@@ -13,6 +13,7 @@ $("#create").click(function () {
     var url = "http://localhost:3000/postIT";
     $.post(url, newuser, function (data, status) {
         console.log("Inserted " + data);
+        setTimeout(window.location.href = "index.html", 1000);
     });
 });
 
@@ -47,26 +48,16 @@ $(document).ready(function () {
                     body += '</div><form metod="post">';
                     body += '<div class="row" style="margin: 20px">';
                     body += '<p class="control">';
-                    body += '<a class="button is-danger">';
-                    body += 'Edit';
-                    body += '</a>';
+                    body += '<button type="button" class="button is-info is-outlined" style="width:100%;" onclick=edita(' + data[i].id + ') id="edit">Edit</button>';
                     body += '</p>';
-                    body += '<a class="button is-success">';
-                    body += '<span class="icon is-small">';
-                    body += '<i class="fa fa-check"></i>';
-                    body += '</span>';
-                    body += '<span>Save</span>';
-                    body += '<a type="button" class="button is-danger is-outlined" id="del">';
-                    body += '<span>Delete</span>';
-                    body += '<span class="icon is-small">';
-                    body += '<i class="fa fa-times"></i>';
-                    body += '</span>';
-                    body += '</a>';
+                    body += '<p class="control">';
+                    body += '<button type="button" class="button is-danger is-outlined" style="width:100%;" onclick=deldata(' + data[i].id + ') id="del">Delete</button>';
+                    body += '</p>';
                     body += '</div>';
                     if (info.userInput != "" && info.actor != "" && info.date != "") {
                         $("#result").append(body);
                     }
-                });
+                });             
             },
             error: function () {
                 alert('Fail!');
@@ -74,22 +65,32 @@ $(document).ready(function () {
         });
     });
 });
-
-$("#del").click(function () {
-    var id = $.urlParam('id');
-    var url = "http://localhost:3000/postIT/?id=" + id;
+    
+function deldata(id) {
+    console.log(id);
     $.ajax({
-        type: 'DELETE',
-        url: "http://localhost:3000/postIT/?id=" + id,
-        mimeType: 'json',
-        success: function (inf) {
-            console.log('Delete!');
+        url: "http://localhost:3000/postIT/" + id,
+        type: "DELETE",
+        success: function (result) {
+            console.log("Delete success");
+            setTimeout(window.location.href = "index.html", 1000);
         }
     });
-});
+}
 
-
-
-
-
-
+function edita(id) {
+    var url = "http://localhost:3000/postIT/" + id;
+    $.get(url, function (data, status) {
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:3000/postIT/' + id,
+            mimeType: 'json',
+            success: function (info) {
+                setTimeout(window.location.href = "edit.html?id=" + info.id, 30000);
+            },
+            error: function () {
+                alert('Fail!');
+            }
+        });
+    });
+}  

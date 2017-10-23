@@ -1,21 +1,15 @@
 {
   "postIT": [
     {
-      "id": 1,
-      "userInput": "madee",
-      "actor": "Mr. Milk",
-      "date": "16/10/2560"
-    },
-    {
       "userInput": "",
       "actor": "",
       "date": "Monday, October 23, 2017 11:21 PM",
       "id": 2
     },
     {
-      "userInput": "",
-      "actor": "",
-      "date": "Monday, October 23, 2017 11:25 PM",
+      "userInput": "sdfd",
+      "actor": "fsdfds",
+      "date": "Tuesday, October 24, 2017 12:53 AM",
       "id": 3
     }
   ]
